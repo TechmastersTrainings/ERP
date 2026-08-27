@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import { AppModule } from '../src/app.module.js';
 import express from 'express';
 import { join } from 'path';
 
@@ -9,6 +8,18 @@ let isInitialized = false;
 
 async function bootstrapServerless() {
   if (!isInitialized) {
+    let AppModule: any;
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const mod = require('../dist/src/app.module.js');
+      AppModule = mod.AppModule;
+    } catch {
+      // Fallback for TS dev environment
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const mod = require('../src/app.module');
+      AppModule = mod.AppModule;
+    }
+
     const app = await NestFactory.create(
       AppModule,
       new ExpressAdapter(server),
@@ -23,6 +34,14 @@ async function bootstrapServerless() {
 }
 
 export default async function handler(req: any, res: any) {
-  await bootstrapServerless();
-  server(req, res);
+  try {
+    await bootstrapServerless();
+    server(req, res);
+  } catch (err: any) {
+    console.error('Vercel Serverless Boot Error:', err);
+    res.status(500).json({
+      error: 'Vercel Serverless Initialization Error',
+      message: err?.message || String(err),
+    });
+  }
 }
