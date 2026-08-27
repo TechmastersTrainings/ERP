@@ -14,7 +14,11 @@ export class AuthService implements OnModuleInit {
   constructor(private readonly prisma: PrismaService) {}
 
   async onModuleInit() {
-    await this.seedSuperAdmin();
+    try {
+      await this.seedSuperAdmin();
+    } catch (err) {
+      console.warn('Super Admin seeding note:', err);
+    }
   }
 
   // Seed mandatory Super Admin account: Techmastersinnocations@gmail.com / Fri10Feb@2023
