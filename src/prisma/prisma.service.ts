@@ -11,10 +11,13 @@ export class PrismaService
   constructor() {
     const rawUrl =
       process.env.DATABASE_URL ||
-      'postgresql://postgres:Fri10Feb%402023@db.zttjntjinunlhqlhueci.supabase.co:5432/postgres?sslmode=require';
-    const connectionString = rawUrl.includes('@2023@')
-      ? rawUrl.replace('Fri10Feb@2023', 'Fri10Feb%402023')
-      : rawUrl;
+      'postgresql://postgres:Fri10Feb%402023@db.zttjntjinunlhqlhueci.supabase.co:5432/postgres';
+
+    // Strip query parameters so pg-connection-string does not override rejectUnauthorized: false
+    const cleanUrl = rawUrl.split('?')[0];
+    const connectionString = cleanUrl.includes('@2023@')
+      ? cleanUrl.replace('Fri10Feb@2023', 'Fri10Feb%402023')
+      : cleanUrl;
 
     const pool = new pg.Pool({
       connectionString,
