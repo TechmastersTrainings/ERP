@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techmasters Innovations — Enterprise SaaS Business ERP & GST Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Brand Banner -->
+  <div class="brand-banner">
+    Built & Maintained by <strong>Techmasters Innovations Private Limited</strong> — Visit official website: <a href="https://www.techmastersinnovations.in" target="_blank">www.techmastersinnovations.in</a>
+  </div>
+
+  <!-- Landing Top Navbar -->
+  <nav class="landing-nav" id="landing-nav">
+    <div class="nav-brand-group">
+      <div class="brand-logo">T</div>
+      <div>
+        <div class="brand-title">Techmasters ERP</div>
+        <div class="brand-subtitle">Techmasters Innovations Pvt. Ltd.</div>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#features" onclick="scrollToSection('features')">Features</a></li>
+      <li><a href="#showcase" onclick="scrollToSection('showcase')">Live Preview</a></li>
+      <li><a href="#pricing" onclick="scrollToSection('pricing')">Pricing Tiers</a></li>
+      <li><button class="btn btn-secondary btn-sm" onclick="openLoginModal()">Sign In</button></li>
+      <li><button class="btn btn-primary btn-sm" onclick="openRegisterModal()">Register Business</button></li>
+      <li><button class="btn btn-secondary btn-sm" style="background:var(--accent-cyan); color:black; font-weight:700;" onclick="launchDemoApp()">Launch Live App</button></li>
+    </ul>
+  </nav>
+
+  <!-- LANDING PAGE VIEW -->
+  <div id="landing-view">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge">Commercial-Grade SaaS Business ERP — Techmasters Innovations</div>
+      <h1 class="hero-title">Centralized ERP, Invoicing, Inventory & <span>Government GST Engine</span></h1>
+      <p class="hero-desc">
+        Empower Indian enterprise firms with automated single-entry ledger cascades, real-time multi-warehouse inventory, e-Invoicing (IRN & Signed QR), e-Way Bills, GSTR-2B reconciliation, double-entry financial statements, Income Tax TDS/TCS (Form 26Q), Fixed Asset Depreciation (WDV/SLM), Statutory Payroll (PF, ESI, PT), Bank Reconciliation (BRS), Manufacturing Production Orders (BOM), and Super Admin registration approval workflows.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" onclick="openRegisterModal()">Register Your Business Account</button>
+        <button class="btn btn-secondary" onclick="openLoginModal()">Client Sign In</button>
+        <button class="btn btn-secondary" style="border-color:var(--accent-cyan); color:var(--accent-cyan);" onclick="launchDemoApp()">Launch Interactive ERP Portal</button>
+      </div>
+    </section>
+
+    <!-- Live Interactive ERP Showcase Preview -->
+    <section id="showcase" class="showcase-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <div>
+          <h3 style="color:white; font-size:1.3rem;">Live ERP Engine Preview</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem;">Test real-time calculation outputs directly from the Techmasters cascade engine</p>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="launchDemoApp()">Launch Full Application</button>
+      </div>
+
+      <div class="showcase-tabs">
+        <button class="tab-btn active" onclick="switchShowcaseTab('cascade')">Sales Cascade Engine</button>
+        <button class="tab-btn" onclick="switchShowcaseTab('einvoice')">e-Invoice IRN & QR Code</button>
+        <button class="tab-btn" onclick="switchShowcaseTab('reports')">Double-Entry Financial P&L</button>
+        <button class="tab-btn" onclick="switchShowcaseTab('gst')">GSTR-2B ITC Reconciliation</button>
+      </div>
+
+      <div id="showcase-content" style="background: rgba(7, 10, 18, 0.9); border: 1px solid var(--border-slate); border-radius: 12px; padding: 24px;">
+        <!-- Default Cascade Preview -->
+        <div id="tab-cascade">
+          <h4 style="color:var(--accent-gold); margin-bottom:12px;">Automated Single-Entry Operational Cascade</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">
+            Creating a single Sales Invoice instantly triggers:
+          </p>
+          <ul style="color:var(--text-main); font-size:0.9rem; line-height:1.8; margin-left:20px;">
+            <li>Stock Ledger Outward posting (-5 Units, FIFO Valuation)</li>
+            <li>Customer Accounts Receivable (AR) Ledger update (+₹14,750.00)</li>
+            <li>Output CGST (9%) & SGST (9%) liability posting (₹1,125.00 each)</li>
+            <li>Double-Entry General Ledger journal entries (Debit AR, Credit Sales Revenue & Taxes)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Features Section -->
+    <section id="features" class="features-grid">
+      <div class="card">
+        <div class="card-title">Single-Entry Operational Cascade</div>
+        <div class="card-desc">Post a sales invoice or purchase bill once. The cascade engine posts inventory outward/inward, updates AR/AP ledgers, records GST liabilities/assets, and creates journal entries.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Income Tax TDS & TCS Engine</div>
+        <div class="card-desc">Automated withholding tax deductions under Section 194Q, 194C, 194J, 206C(1H), and Form 26Q quarterly returns.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Super Admin Approval Workflow</div>
+        <div class="card-desc">Every business registration is held in pending status until approved by Techmasters Super Admin (Techmastersinnocations@gmail.com).</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Government GST & e-Invoicing</div>
+        <div class="card-desc">Generate 64-character SHA-256 IRNs, Ack Numbers, and Signed QR Codes embedded into PDF Tax Invoices. Issue 12-digit e-Way Bills with distance validity.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Manufacturing BOM & Work Orders</div>
+        <div class="card-desc">Execute production work orders with multi-level Bill of Materials (BOM) ratio raw material deduction and finished goods stock creation.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Statutory Payroll & Salary Slips</div>
+        <div class="card-desc">Automated HR monthly salary calculation with Indian statutory deductions (PF @ 12%, ESI @ 0.75%, Professional Tax) and GL salary expense posting.</div>
+      </div>
+    </section>
+
+    <!-- Proper Corporate Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Techmasters Innovations Private Limited</h3>
+          <p>
+            A technology powerhouse delivering custom enterprise software engineering, cloud infrastructure, AI solutions, and commercial SaaS business platforms.
+          </p>
+          <div style="margin-top:16px; font-size:0.85rem; color:var(--text-muted);">
+            Official Corporate Portal: <a href="https://www.techmastersinnovations.in" target="_blank" style="color:var(--primary); font-weight:600;">www.techmastersinnovations.in</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Platform Modules</h4>
+          <ul>
+            <li><a href="#" onclick="launchDemoApp()">Sales & Invoicing</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Purchases & Orders</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Manufacturing BOM Production</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Group Consolidation</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Multi-Currency Forex</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Financial Reports</h4>
+          <ul>
+            <li><a href="#" onclick="launchDemoApp()">Trial Balance</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Profit & Loss</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Balance Sheet</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Finished Goods Ledger</a></li>
+            <li><a href="#" onclick="launchDemoApp()">Super Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Corporate Campus & Contact</h4>
+          <ul>
+            <li><strong>Techmasters Innovations Pvt. Ltd.</strong></li>
+            <li>1st Floor, Near Guru Nanak Dev Engg College,</li>
+            <li>Mailoor Road, Bidar - 585403, Karnataka, India</li>
+            <li>Phone / WhatsApp: <a href="tel:+919880768222" style="color:white;">+91 9880768222</a></li>
+            <li>Email: <a href="mailto:info@techmastersinnovations.in" style="color:white;">info@techmastersinnovations.in</a></li>
+            <li>Support: <a href="mailto:support@techmastersinnovations.in" style="color:white;">support@techmastersinnovations.in</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Techmasters Innovations Private Limited. All Rights Reserved. | <a href="https://www.techmastersinnovations.in" target="_blank" style="color:var(--text-muted);">www.techmastersinnovations.in</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- LOGGED IN APP VIEW -->
+  <div id="app-layout" style="display: none;">
+    <!-- Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">T</div>
+        <span>Techmasters ERP</span>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><button id="nav-dashboard" class="active" onclick="switchView('dashboard')">Executive Dashboard</button></li>
+        <li class="nav-item"><button id="nav-sales" onclick="switchView('sales')">Sales & Billing</button></li>
+        <li class="nav-item"><button id="nav-orders" onclick="switchView('orders')">Purchase & Sales Orders</button></li>
+        <li class="nav-item"><button id="nav-purchases" onclick="switchView('purchases')">Purchases & Bills</button></li>
+        <li class="nav-item"><button id="nav-inventory" onclick="switchView('inventory')">Inventory & Batches</button></li>
+        <li class="nav-item"><button id="nav-production" onclick="switchView('production')">Manufacturing BOM Production</button></li>
+        <li class="nav-item"><button id="nav-transfers" onclick="switchView('transfers')">Multi-Warehouse Transfers</button></li>
+        <li class="nav-item"><button id="nav-jobwork" onclick="switchView('jobwork')">Job Work Subcontracting</button></li>
+        <li class="nav-item"><button id="nav-fixedassets" onclick="switchView('fixedassets')">Fixed Asset Register</button></li>
+        <li class="nav-item"><button id="nav-payroll" onclick="switchView('payroll')">Payroll & Salary Slips</button></li>
+        <li class="nav-item"><button id="nav-consolidation" onclick="switchView('consolidation')">Multi-Company Consolidation</button></li>
+        <li class="nav-item"><button id="nav-bankrec" onclick="switchView('bankrec')">Bank Reconciliation (BRS)</button></li>
+        <li class="nav-item"><button id="nav-tds" onclick="switchView('tds')">TDS & TCS Compliance</button></li>
+        <li class="nav-item"><button id="nav-payments" onclick="switchView('payments')">Payments & Reminders</button></li>
+        <li class="nav-item"><button id="nav-reports" onclick="switchView('reports')">Financial Statements</button></li>
+        <li class="nav-item"><button id="nav-gst" onclick="switchView('gst')">GST & Compliance</button></li>
+        <li class="nav-item"><button id="nav-forex" onclick="switchView('forex')">Multi-Currency Forex</button></li>
+        <li class="nav-item"><button id="nav-analytics" onclick="switchView('analytics')">Executive Analytics</button></li>
+        <li class="nav-item"><button id="nav-admin" style="color:var(--accent-gold);" onclick="switchView('admin')">Super Admin Approvals</button></li>
+        <li class="nav-item"><button id="nav-subscriptions" onclick="switchView('subscriptions')">SaaS Subscription</button></li>
+        <li class="nav-item"><button id="nav-import-export" onclick="switchView('import-export')">CSV Import/Export</button></li>
+        <li class="nav-item"><button id="nav-audit" onclick="switchView('audit')">Audit Logs</button></li>
+        <li class="nav-item" style="margin-top:auto;"><button onclick="exitAppToLanding()" style="color:var(--danger);">Sign Out</button></li>
+      </ul>
+    </aside>
+
+    <main class="main-container">
+      <header class="header">
+        <div class="page-title" id="current-page-title">Executive Dashboard</div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Active Account: <strong id="header-company-name">Techmasters Super Admin (Techmastersinnocations@gmail.com)</strong></span>
+          <button class="btn btn-secondary btn-sm" onclick="seedSampleData()">Seed Demo Data</button>
+        </div>
+      </header>
+
+      <div class="content-body" id="app-view"></div>
+    </main>
+  </div>
+
+  <!-- Global Toast & Modals Container -->
+  <div id="toast-container"></div>
+  <div id="modal-container"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
