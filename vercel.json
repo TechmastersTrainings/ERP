@@ -1,22 +1,88 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "builds": [
+  "rewrites": [
     {
-      "src": "api/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["dist/**", "public/**"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
+      "source": "/auth/(.*)",
+      "destination": "/api/index"
     },
     {
-      "src": "/(.*)",
-      "dest": "/api/index.ts"
+      "source": "/sales/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/purchases/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/customers(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/suppliers(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/products(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/inventory/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/production/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/bank-reconciliation/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/consolidation/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/payroll/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/fixed-assets(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/transfers(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/gst/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/einvoice/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/admin/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/reports/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/analytics/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/subscriptions(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/import-export/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/audit(.*)",
+      "destination": "/api/index"
     }
   ]
 }

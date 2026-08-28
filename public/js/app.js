@@ -1,5 +1,5 @@
 // SaaS ERP Application State
-const API_BASE = 'http://localhost:3001';
+const API_BASE = window.location.origin.includes('localhost') ? 'http://localhost:3001' : window.location.origin;
 let currentCompanyId = null;
 let currentCustomerId = null;
 let currentSupplierId = null;
